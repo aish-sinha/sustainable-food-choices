@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainable Food Explorer</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Sustainable Food Explorer</h1>
+    <p>Explore the impacts of food production on the environment, health, and waste management.</p>
+  </header>
+
+  <main>
+    <section id="food-production">
+      <h2>Food Production Methods</h2>
+      <div class="method" id="traditional-farming">
+        <h3>Traditional Farming</h3>
+        <button id="traditional-btn" onclick="updateProduction('traditional')">Select Traditional Farming</button>
+        <p id="traditional-info"></p>
+      </div>
+      <div class="method" id="plant-based">
+        <h3>Plant-Based</h3>
+        <button id="plant-based-btn" onclick="updateProduction('plant-based')">Select Plant-Based</button>
+        <p id="plant-based-info"></p>
+      </div>
+      <div class="method" id="lab-grown">
+        <h3>Lab-Grown</h3>
+        <button id="lab-grown-btn" onclick="updateProduction('lab-grown')">Select Lab-Grown</button>
+        <p id="lab-grown-info"></p>
+      </div>
+    </section>
+
+    <section id="dietary-choices">
+      <h2>Dietary Choices Simulation</h2>
+      <label for="diet-selector">Choose your diet:</label>
+      <select id="diet-selector" onchange="updateDiet(this.value)">
+        <option value="whole">Whole Foods</option>
+        <option value="processed">Processed Foods</option>
+        <option value="plant-based">Plant-Based</option>
+        <option value="vegan">Vegan</option>
+      </select>
+      <div id="diet-info"></div>
+    </section>
+
+    <section id="waste-management">
+      <h2>Waste Management Paths</h2>
+      <label for="waste-selector">Choose waste management path:</label>
+      <select id="waste-selector" onchange="updateWaste(this.value)">
+        <option value="compost">Composting</option>
+        <option value="landfill">Landfill</option>
+        <option value="recycle">Recycling</option>
+        <option value="incineration">Incineration</option>
+      </select>
+      <div id="waste-info"></div>
+    </section>
+
+    <section id="impact-dashboard">
+      <h2>Your Sustainability Impact</h2>
+      <canvas id="impact-chart"></canvas>
+    </section>
+  </main>
+
+  <section id="summary">
+    <h2>Your Sustainability Summary</h2>
+    <div id="graph-summary">
+        <h3>Impact Summary</h3>
+        <ul id="summary-details">
+          <li>Water Usage: <span id="summary-water">-</span></li>
+          <li>Energy Usage: <span id="summary-energy">-</span></li>
+          <li>GHG Emissions: <span id="summary-ghg">-</span></li>
+        </ul>
+        <p id="graph-description">The impact of your selected choices is yet to be calculated.</p>
+      </div>
+  </section>
+
+  <footer>
+    <p>Created by Sustainable Food Explorer. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
